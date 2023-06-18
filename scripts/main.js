@@ -5,9 +5,18 @@ let sizeInput = "16";
 let canvasSize = Number(sizeInput);
 let previousSize;
 let isSketchPadUpdate = true;
+let mouseDown = false;
 
 updateSketchPad();
 hoverEffect();
+paint();
+window.addEventListener('mousedown', () => {
+    mouseDown = true;
+});
+
+window.addEventListener('mouseup', () => {
+    mouseDown = false;
+});
 
 function resetSketchPad() {
     if (isSketchPadUpdate) {
@@ -47,6 +56,20 @@ function hoverEffect() {
     });
 }
 
+function paint() {
+    const areaList = document.querySelectorAll('.grid');
+    areaList.forEach((squareArea) => {
+        squareArea.addEventListener('mouseover', (e) => {
+            if (e.type === 'mouseover' && mouseDown) {
+                e.target.style.backgroundColor = 'black';
+            }
+        });
+        squareArea.addEventListener('mousedown', (e) => {
+            e.target.style.backgroundColor = 'black';
+        });
+    });
+}
+
 sizeSelection.addEventListener('click', () => {
     sizeInput = prompt("Please enter a number from 1 to 100", "16");
     if (sizeInput === null || sizeInput === "" || sizeInput.trim() === "") {
@@ -74,6 +97,7 @@ sizeSelection.addEventListener('click', () => {
     updateSketchPad();
     if (isSketchPadUpdate) {
         hoverEffect();
+        paint();
     }
     isSketchPadUpdate = false;
 });
