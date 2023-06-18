@@ -12,6 +12,27 @@ body {
     align-items: center;
 }
 
+.rainbowOn {
+    padding: 10px 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: 1em;
+    background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    color: white;
+    cursor: pointer;
+}
+
+.rainbowOff, .size {
+    padding: 10px 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: 1em;
+    background-color: white;
+    background-image: none;
+    color: black;
+    cursor: pointer;
+}
+
 .sketchPad {
     display: flex;
     flex-wrap: wrap;

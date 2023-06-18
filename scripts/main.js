@@ -1,11 +1,16 @@
 const sketchPad = document.querySelector('.sketchPad');
 const sizeSelection = document.querySelector('.size');
+const rainbowBtn = document.querySelector('.rainbowToggle');
 
 let sizeInput = "16";
 let canvasSize = Number(sizeInput);
 let previousSize;
 let isSketchPadUpdate = true;
 let mouseDown = false;
+let rainbowMode = false;
+let red;
+let green;
+let blue;
 
 updateSketchPad();
 hoverEffect();
@@ -61,11 +66,25 @@ function paint() {
     areaList.forEach((squareArea) => {
         squareArea.addEventListener('mouseover', (e) => {
             if (e.type === 'mouseover' && mouseDown) {
-                e.target.style.backgroundColor = 'black';
+                if (rainbowMode) {
+                    red = Math.floor(Math.random() * 256);
+                    green = Math.floor(Math.random() * 256);
+                    blue = Math.floor(Math.random() * 256);
+                    e.target.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+                } else {
+                    e.target.style.backgroundColor = 'black';
+                }
             }
         });
         squareArea.addEventListener('mousedown', (e) => {
-            e.target.style.backgroundColor = 'black';
+            if (rainbowMode) {
+                red = Math.floor(Math.random() * 256);
+                green = Math.floor(Math.random() * 256);
+                blue = Math.floor(Math.random() * 256);
+                e.target.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+            } else {
+                e.target.style.backgroundColor = 'black';
+            } 
         });
     });
 }
@@ -100,4 +119,9 @@ sizeSelection.addEventListener('click', () => {
         paint();
     }
     isSketchPadUpdate = false;
+});
+
+rainbowBtn.addEventListener('click', (e) => {
+    rainbowMode = !rainbowMode;
+    e.target.classList.toggle('rainbowOff');
 });
