@@ -2,6 +2,7 @@ const sketchPad = document.querySelector('.sketchPad');
 const sizeSelection = document.querySelector('.size');
 const rainbowBtn = document.querySelector('.rainbowToggle');
 const colorPicker = document.querySelector('#colorPicker');
+const eraseBtn = document.querySelector('.erase');
 
 let sizeInput = "16";
 let canvasSize = Number(sizeInput);
@@ -13,6 +14,7 @@ let red;
 let green;
 let blue;
 let colorSelected = "black";
+let eraseMode = false;
 
 updateSketchPad();
 hoverEffect();
@@ -66,6 +68,8 @@ function paint() {
                     green = Math.floor(Math.random() * 256);
                     blue = Math.floor(Math.random() * 256);
                     e.target.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+                } else if (eraseMode) {
+                    e.target.style.backgroundColor = 'white';
                 } else {
                     e.target.style.backgroundColor = colorSelected;
                 }
@@ -77,6 +81,8 @@ function paint() {
                 green = Math.floor(Math.random() * 256);
                 blue = Math.floor(Math.random() * 256);
                 e.target.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+            } else if (eraseMode) {
+                e.target.style.backgroundColor = 'white';
             } else {
                 e.target.style.backgroundColor = colorSelected;
             } 
@@ -127,6 +133,19 @@ sizeSelection.addEventListener('click', () => {
 rainbowBtn.addEventListener('click', (e) => {
     rainbowMode = !rainbowMode;
     e.target.classList.toggle('rainbowOff');
+    if (eraseMode) {
+        eraseMode = false;
+        eraseBtn.classList.remove("eraseOn");
+    }
+});
+
+eraseBtn.addEventListener('click', (e) => {
+    eraseMode = !eraseMode;
+    e.target.classList.toggle('eraseOn');
+    if (rainbowMode) {
+        rainbowMode = false;
+        rainbowBtn.classList.add("rainbowOff");
+    }
 });
 
 window.addEventListener('mousedown', () => {

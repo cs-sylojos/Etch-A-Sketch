@@ -23,7 +23,7 @@ body {
     cursor: pointer;
 }
 
-.rainbowOff, .size {
+.rainbowOff, .size, .erase {
     padding: 10px 20px;
     border: 2px solid black;
     border-radius: 10px;
@@ -54,4 +54,14 @@ body {
     cursor: pointer;
     width: 155px;
     height: 42px;
+}
+
+.erase {
+    padding: 10px 52px;
+    display: block;
+}
+
+.eraseOn {
+    color: white;
+    background-color: rgb(70, 68, 68);
 }
