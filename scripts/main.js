@@ -1,6 +1,7 @@
 const sketchPad = document.querySelector('.sketchPad');
 const sizeSelection = document.querySelector('.size');
 const rainbowBtn = document.querySelector('.rainbowToggle');
+const colorPicker = document.querySelector('#colorPicker');
 
 let sizeInput = "16";
 let canvasSize = Number(sizeInput);
@@ -11,17 +12,11 @@ let rainbowMode = false;
 let red;
 let green;
 let blue;
+let colorSelected = "black";
 
 updateSketchPad();
 hoverEffect();
 paint();
-window.addEventListener('mousedown', () => {
-    mouseDown = true;
-});
-
-window.addEventListener('mouseup', () => {
-    mouseDown = false;
-});
 
 function resetSketchPad() {
     if (isSketchPadUpdate) {
@@ -72,7 +67,7 @@ function paint() {
                     blue = Math.floor(Math.random() * 256);
                     e.target.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
                 } else {
-                    e.target.style.backgroundColor = 'black';
+                    e.target.style.backgroundColor = colorSelected;
                 }
             }
         });
@@ -83,10 +78,18 @@ function paint() {
                 blue = Math.floor(Math.random() * 256);
                 e.target.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
             } else {
-                e.target.style.backgroundColor = 'black';
+                e.target.style.backgroundColor = colorSelected;
             } 
         });
     });
+}
+
+function updateColorSelect(e) {
+    colorSelected = e.target.value;
+}
+
+function updateColorDismiss(e) {
+    colorSelected = e.target.value;
 }
 
 sizeSelection.addEventListener('click', () => {
@@ -125,3 +128,15 @@ rainbowBtn.addEventListener('click', (e) => {
     rainbowMode = !rainbowMode;
     e.target.classList.toggle('rainbowOff');
 });
+
+window.addEventListener('mousedown', () => {
+    mouseDown = true;
+});
+
+window.addEventListener('mouseup', () => {
+    mouseDown = false;
+});
+
+colorPicker.addEventListener("input", updateColorSelect, false);
+colorPicker.addEventListener("change", updateColorDismiss, false);
+colorPicker.select();
