@@ -23,7 +23,7 @@ body {
     cursor: pointer;
 }
 
-.rainbowOff, .size, .erase, .clearBoard {
+.rainbowOff, .size, .erase, .clearBoard, .gridLineToggle {
     padding: 10px 20px;
     border: 2px solid black;
     border-radius: 10px;
@@ -61,11 +61,16 @@ body {
     display: block;
 }
 
-.eraseOn {
+.eraseOn, .gridOn {
     color: white;
     background-color: rgb(70, 68, 68);
 }
 
 .clearBoard {
     padding: 10px 58px;
+}
+
+.gridLineToggle {
+    display: block;
+    padding: 10px 15px;
 }

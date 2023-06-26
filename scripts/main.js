@@ -4,6 +4,7 @@ const rainbowBtn = document.querySelector('.rainbowToggle');
 const colorPicker = document.querySelector('#colorPicker');
 const eraseBtn = document.querySelector('.erase');
 const clearBtn = document.querySelector('.clearBoard');
+const gridBtn = document.querySelector('.gridLineToggle');
 
 let sizeInput = "16";
 let canvasSize = Number(sizeInput);
@@ -16,6 +17,7 @@ let green;
 let blue;
 let colorSelected = "black";
 let eraseMode = false;
+let gridMode = true;
 
 updateSketchPad();
 hoverEffect();
@@ -41,7 +43,11 @@ function updateSketchPad() {
             const grid = document.createElement('div');
             grid.classList.add('grid');
             grid.classList.add('default');
-            grid.setAttribute('style', `height: ${gridDimension}px; width: ${gridDimension}px; border: 1px solid grey;`);
+            if (gridMode) {
+                grid.setAttribute('style', `height: ${gridDimension}px; width: ${gridDimension}px; border: 1px solid grey;`);
+            } else {
+                grid.setAttribute('style', `height: ${gridDimension}px; width: ${gridDimension}px;`);
+            }
             sketchPad.appendChild(grid);
         }
     }
@@ -154,6 +160,21 @@ clearBtn.addEventListener('click', () => {
     tileList.forEach((tile) => {
         tile.style.removeProperty("background-color");
     });
+});
+
+gridBtn.addEventListener('click', (e) => {
+    gridMode = !gridMode;
+    e.target.classList.toggle('gridOn');
+    const gridTileList = document.querySelectorAll('.grid');
+    if (gridMode) {
+        gridTileList.forEach((gridTile) => {
+            gridTile.style.border = "1px solid grey";
+        });
+    } else {
+        gridTileList.forEach((gridTile) => {
+            gridTile.style.removeProperty("border");
+        });
+    }
 });
 
 window.addEventListener('mousedown', () => {
