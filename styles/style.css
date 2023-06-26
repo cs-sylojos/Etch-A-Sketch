@@ -23,7 +23,7 @@ body {
     cursor: pointer;
 }
 
-.rainbowOff, .size, .erase {
+.rainbowOff, .size, .erase, .clearBoard {
     padding: 10px 20px;
     border: 2px solid black;
     border-radius: 10px;
@@ -57,11 +57,15 @@ body {
 }
 
 .erase {
-    padding: 10px 52px;
+    padding: 10px 53px;
     display: block;
 }
 
 .eraseOn {
     color: white;
     background-color: rgb(70, 68, 68);
+}
+
+.clearBoard {
+    padding: 10px 58px;
 }

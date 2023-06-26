@@ -3,6 +3,7 @@ const sizeSelection = document.querySelector('.size');
 const rainbowBtn = document.querySelector('.rainbowToggle');
 const colorPicker = document.querySelector('#colorPicker');
 const eraseBtn = document.querySelector('.erase');
+const clearBtn = document.querySelector('.clearBoard');
 
 let sizeInput = "16";
 let canvasSize = Number(sizeInput);
@@ -146,6 +147,13 @@ eraseBtn.addEventListener('click', (e) => {
         rainbowMode = false;
         rainbowBtn.classList.add("rainbowOff");
     }
+});
+
+clearBtn.addEventListener('click', () => {
+    const tileList = document.querySelectorAll('.grid');
+    tileList.forEach((tile) => {
+        tile.style.removeProperty("background-color");
+    });
 });
 
 window.addEventListener('mousedown', () => {
