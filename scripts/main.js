@@ -70,7 +70,7 @@ function paint() {
                     blue = Math.floor(Math.random() * 256);
                     e.target.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
                 } else if (eraseMode) {
-                    e.target.style.backgroundColor = 'white';
+                    e.target.style.removeProperty("background-color");
                 } else {
                     e.target.style.backgroundColor = colorSelected;
                 }
@@ -83,7 +83,7 @@ function paint() {
                 blue = Math.floor(Math.random() * 256);
                 e.target.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
             } else if (eraseMode) {
-                e.target.style.backgroundColor = 'white';
+                e.target.style.removeProperty("background-color");
             } else {
                 e.target.style.backgroundColor = colorSelected;
             } 
