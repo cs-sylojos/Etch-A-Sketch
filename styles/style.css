@@ -68,9 +68,27 @@ body {
 
 .clearBoard {
     padding: 10px 58px;
+    display: block;
 }
 
 .gridLineToggle {
     display: block;
     padding: 10px 15px;
+    margin-bottom: 0.6rem;
+}
+
+legend {
+    color: Orange;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: auto;
+}
+
+fieldset {
+    box-shadow: 0.5em 0.5em 1em rgba(0, 0, 0, 0.7);
+    margin: 1rem;
+}
+
+button, #colorPicker {
+    margin: 0.3rem;
 }

@@ -9,15 +9,24 @@
 </head>
 <body>
     <div class="container">
-        <button class="size">Sketchpad Size</button>
-        <div>
-            <input title="Pick a Color" type="color" id="colorPicker" value="#000000">
-            <label for="colorPicker"></label>
-        </div>
-        <button class="rainbowToggle rainbowOn rainbowOff">Toggle Rainbow</button>
-        <button class="erase">Eraser</button>
-        <button class="clearBoard">Clear</button>
-        <button class="gridLineToggle">Toggle Grid Lines</button>
+        <!-- <button class="size">Sketchpad Size</button> -->
+        <fieldset>
+            <legend>Paint</legend>
+            <div>
+                <input title="Pick a Color" type="color" id="colorPicker" value="#000000">
+                <label for="colorPicker"></label>
+            </div>
+            <button class="rainbowToggle rainbowOn rainbowOff">Toggle Rainbow</button>
+            <button class="erase">Eraser</button>
+        </fieldset>
+        <!-- <button class="clearBoard">Clear</button>
+        <button class="gridLineToggle">Toggle Grid Lines</button> -->
+        <fieldset>
+            <legend>Canvas</legend>
+            <button class="gridLineToggle">Toggle Grid Lines</button>
+            <button class="clearBoard">Clear</button>
+            <button class="size">Sketchpad Size</button>
+        </fieldset>
     </div>
     <div class="sketchPad"></div>
     <script src="./scripts/main.js"></script>
