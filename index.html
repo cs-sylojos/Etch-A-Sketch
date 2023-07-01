@@ -9,23 +9,20 @@
 </head>
 <body>
     <div class="container">
-        <!-- <button class="size">Sketchpad Size</button> -->
         <fieldset>
             <legend>Paint</legend>
             <div>
-                <input title="Pick a Color" type="color" id="colorPicker" value="#000000">
+                <input title="Pick a Color" type="color" id="colorPicker" value="#000000" class="transitionEffect">
                 <label for="colorPicker"></label>
             </div>
-            <button class="rainbowToggle rainbowOn rainbowOff">Toggle Rainbow</button>
-            <button class="erase">Eraser</button>
+            <button class="rainbowToggle rainbowOn rainbowOff transitionEffect">Toggle Rainbow</button>
+            <button class="erase transitionEffect">Eraser</button>
         </fieldset>
-        <!-- <button class="clearBoard">Clear</button>
-        <button class="gridLineToggle">Toggle Grid Lines</button> -->
         <fieldset>
             <legend>Canvas</legend>
-            <button class="gridLineToggle">Toggle Grid Lines</button>
-            <button class="clearBoard">Clear</button>
-            <button class="size">Sketchpad Size</button>
+            <button class="gridLineToggle transitionEffect">Toggle Grid Lines</button>
+            <button class="clearBoard transitionEffect">Clear</button>
+            <button class="size transitionEffect">Sketchpad Size</button>
         </fieldset>
     </div>
     <div class="sketchPad"></div>

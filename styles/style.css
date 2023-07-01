@@ -77,6 +77,10 @@ body {
     margin-bottom: 0.6rem;
 }
 
+.size {
+    padding: 10px 21px;
+}
+
 legend {
     color: Orange;
     font-size: 1.5rem;
@@ -91,4 +95,12 @@ fieldset {
 
 button, #colorPicker {
     margin: 0.3rem;
+}
+
+.transitionEffect {
+    transition: transform 0.1s;
+}
+
+.transitionEffect:hover {
+    transform: scale(1.1);
 }
