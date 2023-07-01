@@ -8,24 +8,30 @@
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
-    <div class="container">
-        <fieldset>
-            <legend>Paint</legend>
-            <div>
-                <input title="Pick a Color" type="color" id="colorPicker" value="#000000" class="transitionEffect">
-                <label for="colorPicker"></label>
-            </div>
-            <button class="rainbowToggle rainbowOn rainbowOff transitionEffect">Toggle Rainbow</button>
-            <button class="erase transitionEffect">Eraser</button>
-        </fieldset>
-        <fieldset>
-            <legend>Canvas</legend>
-            <button class="gridLineToggle transitionEffect">Toggle Grid Lines</button>
-            <button class="clearBoard transitionEffect">Clear</button>
-            <button class="size transitionEffect">Sketchpad Size</button>
-        </fieldset>
+    <main>
+        <h1>Etch A Sketch</h1>
+    </main>
+    <div class="mainBody">
+        <div class="container">
+            <fieldset>
+                <legend>Paint</legend>
+                <div>
+                    <input title="Pick a Color" type="color" id="colorPicker" value="#000000" class="transitionEffect">
+                    <label for="colorPicker"></label>
+                </div>
+                <button class="rainbowToggle rainbowOn rainbowOff transitionEffect">Toggle Rainbow</button>
+                <button class="erase transitionEffect">Eraser</button>
+            </fieldset>
+            <fieldset>
+                <legend>Canvas</legend>
+                <button class="gridLineToggle transitionEffect">Toggle Grid Lines</button>
+                <button class="clearBoard transitionEffect">Clear</button>
+                <button class="size transitionEffect">Sketchpad Size</button>
+            </fieldset>
+        </div>
+        <div class="sketchPad"></div>
     </div>
-    <div class="sketchPad"></div>
+    <footer>Copyright &#169 2023 syuong</footer>
     <script src="./scripts/main.js"></script>
 </body>
 </html>

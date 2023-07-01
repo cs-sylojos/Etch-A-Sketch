@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 * {
     box-sizing: border-box;
 }
@@ -6,11 +8,28 @@ body {
     margin: 0;
     height: 100vh;
     background-color: rgb(70, 68, 68);
+}
+
+.mainBody {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 20px;
+}
+
+h1 {
+    font-family: 'Bangers', cursive;
+    text-align: center;
+    font-size: 3rem;
+    color: rgb(231, 197, 5);
+}
+
+footer {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: rgb(231, 197, 5);
 }
 
 .rainbowOn {
@@ -24,7 +43,7 @@ body {
 }
 
 .rainbowOff, .size, .erase, .clearBoard, .gridLineToggle {
-    padding: 10px 20px;
+    padding: 10px 23px;
     border: 2px solid black;
     border-radius: 10px;
     font-size: 1em;
@@ -73,15 +92,16 @@ body {
 
 .gridLineToggle {
     display: block;
-    padding: 10px 15px;
+    padding: 10px 16px;
     margin-bottom: 0.6rem;
 }
 
 .size {
-    padding: 10px 21px;
+    padding: 10px 24px;
 }
 
 legend {
+    font-family: 'Bangers', cursive;
     color: Orange;
     font-size: 1.5rem;
     font-weight: 700;
@@ -95,6 +115,7 @@ fieldset {
 
 button, #colorPicker {
     margin: 0.3rem;
+    font-family: 'Comic Neue', cursive;
 }
 
 .transitionEffect {
