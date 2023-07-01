@@ -38,15 +38,15 @@ function resetSketchPad() {
 function updateSketchPad() {
     if (isSketchPadUpdate) {
         let size = canvasSize * canvasSize;
-        let gridDimension = 600 / canvasSize;
+        let gridDimension = (((sketchPad.clientWidth / canvasSize) / sketchPad.clientWidth) * 100).toFixed(4);
         for (let i = 0; i < size; i++) {
             const grid = document.createElement('div');
             grid.classList.add('grid');
             grid.classList.add('default');
             if (gridMode) {
-                grid.setAttribute('style', `height: ${gridDimension}px; width: ${gridDimension}px; border: 1px solid grey;`);
+                grid.setAttribute('style', `height: ${gridDimension}%; width: ${gridDimension}%; border: 1px solid grey;`);
             } else {
-                grid.setAttribute('style', `height: ${gridDimension}px; width: ${gridDimension}px;`);
+                grid.setAttribute('style', `height: ${gridDimension}%; width: ${gridDimension}%;`);
             }
             sketchPad.appendChild(grid);
         }
